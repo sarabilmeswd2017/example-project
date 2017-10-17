@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+function findCount(A) {
+  //for loop through the array
+  //when hit the same number, count should go up one interger
+  //if count % 2 !== 0, then log the number
+   var currentNumber = A[i];
+    var previousNumber =A[i-1];
+  var count = {};
+  for(var i =0;i<A.length;i++){
+   
+    if(count[currentNumber]){
+    count[currentNumber]++;
+    } else {
+      count[currentNumber] = 1;
+    }
+   
+  }
+   return count;
+}
+  
+ 
+function findOdd(A){
+
+  var count = findCount(A);
+ for (var currentNumber in count){
+    if(count[currentNumber] % 2 !== 0){
+  return count[currentNumber];
+  }
+  }
+  return count[currentNumber];
+ 
+}
+
+console.log(findOdd([1,1,2,-2,5,2,4,4,-1,-2,5]));
+ </script>
+</body>
+</html>

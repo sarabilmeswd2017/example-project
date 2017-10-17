@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+  var arr = ['Hellos','world'];
+
+function transposeTwoStrings(arr){
+ var result = '';
+ var count = 0;
+   while(arr[0][count] || arr[1][count]){
+     //if there is a value in the first string, its the last letter, 
+       //and the first word is longer than the second word, just log the value
+     if(arr[0][count] || count !== arr[0].length -1){
+       result += arr[0][count] + " ";
+     }
+    //or if there is a value in the first string that is not the last letter and first string is not longer than log the letter plus a space
+     else if(arr[0][count] && count === arr[0].length -1 && arr[0].length > arr[1].length ){
+       result += arr[0][count];
+       console.log("I worked");
+     }
+       // or 
+     
+     //if there is no value in the first string log two spaces
+      else{
+       result += " " + " ";
+       //if the second string exists and it does not equal the length of the second string 
+       //log the value at the second string with a line break 
+     
+       }if(arr[1][count] && count !== arr[1].length - 1 ){
+       result += arr[1][count] + "\n";
+         //or if the second string exists, but its the last value, and the first string is less than the second string
+         //just log the value
+      } else if(arr[1][count] && count === arr[1].length -1 && arr[0].length <= arr[1].length){
+       result += arr[1][count];
+        //or if the first word is larger, keep the line break
+      }
+     else if(arr[1][count] && count === arr[1].length -1 && arr[0].length >= arr[1].length){
+         result += arr[1][count] + "\n";
+        //if it does not exist, have a space and line break
+      }
+      else{
+       result += " " + "\n" ;}
+      
+     
+    count++; 
+   }
+return result;
+}
+
+console.log(transposeTwoStrings(arr));
+  </script>
+</body>
+</html>
